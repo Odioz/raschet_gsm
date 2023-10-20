@@ -46,10 +46,10 @@ flutter:
     - assets/OdiozSoft.png
     - assets/whatsapp.png
   fonts:
-    - family: Evolventa
+    - family: Nunito
       fonts:
-        - asset: assets/fonts/Evolventa-Regular.ttf
-        - asset: assets/fonts/Evolventa-Bold.ttf
+        - asset: assets/fonts/Nunito-Bold.ttf
+        - asset: assets/fonts/Nunito-Bold.ttf
     #- family: RobotoCondensed
     #  fonts:
     #    - asset: assets/fonts/RobotoCondensed-Bold.ttf

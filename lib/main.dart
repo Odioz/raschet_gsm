@@ -54,7 +54,7 @@ class MainApp extends StatelessWidget {
         Locale('ru'),
       ],
       theme: ThemeData(
-        fontFamily: 'Evolventa', //'RobotoCondensed',
+        fontFamily: 'Nunito', //'RobotoCondensed',
         appBarTheme: const AppBarTheme(color: Color.fromRGBO(124, 20, 21, 1)),
       ),
       initialRoute: pervzap ? 'Ustanov' : 'Raschet',

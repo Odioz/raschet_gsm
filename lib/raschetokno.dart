@@ -218,7 +218,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 top: -5,
                                 child: Text('дата',
                                     style: TextStyle(
-                                        fontSize: 20 / globals.txScFact,
+                                        fontSize: 19 / globals.txScFact,
                                         color: Colors.white))),
                             SizedBox(
                                 width: 80,
@@ -263,7 +263,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 top: -5,
                                 child: Text('выезд',
                                     style: TextStyle(
-                                        fontSize: 20 / globals.txScFact,
+                                        fontSize: 19 / globals.txScFact,
                                         color: Colors.white))),
                             SizedBox(
                               width: 80,
@@ -316,7 +316,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 top: -5,
                                 child: Text('возвр',
                                     style: TextStyle(
-                                        fontSize: 20 / globals.txScFact,
+                                        fontSize: 19 / globals.txScFact,
                                         color: Colors.white))),
                             SizedBox(
                               width: 80,
@@ -367,7 +367,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 top: -5,
                                 child: Text('проезд',
                                     style: TextStyle(
-                                        fontSize: 20 / globals.txScFact,
+                                        fontSize: 19 / globals.txScFact,
                                         color: Colors.white))),
                             SizedBox(
                               width: 80,
