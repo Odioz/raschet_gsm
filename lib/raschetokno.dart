@@ -200,8 +200,8 @@ class _RaschetOknoState extends State<RaschetOkno> {
                   style: TextStyle(
                       color: const Color.fromRGBO(255, 255, 255, 1),
                       fontWeight: FontWeight.bold,
-                      letterSpacing: 3,
-                      fontSize: 22 / globals.txScFact)),
+                     // letterSpacing: 3,
+                      fontSize: 20 / globals.txScFact)),
               Container(
                 width: MediaQuery.of(context).size.width - 40,
                 padding: const EdgeInsets.all(10),
@@ -218,11 +218,11 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 top: -5,
                                 child: Text('дата',
                                     style: TextStyle(
-                                        fontSize: 19 / globals.txScFact,
+                                        fontSize: 16 / globals.txScFact,
                                         color: Colors.white))),
                             SizedBox(
-                                width: 80,
-                                height: 60,
+                                width: 70,
+                                height: 50,
                                 child: TextButton(
                                   style: ButtonStyle(
                                       shape: MaterialStatePropertyAll(
@@ -251,7 +251,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                   child: Text(tekData,
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 22 / globals.txScFact)),
+                                          fontSize: 19 / globals.txScFact)),
                                 )),
                           ]),
                       const Spacer(),
@@ -263,11 +263,11 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 top: -5,
                                 child: Text('выезд',
                                     style: TextStyle(
-                                        fontSize: 19 / globals.txScFact,
+                                        fontSize: 16 / globals.txScFact,
                                         color: Colors.white))),
                             SizedBox(
-                              width: 80,
-                              height: 60,
+                              width: 70,
+                              height: 50,
                               child: TextField(
                                 controller: inputData2,
                                 inputFormatters: [maskCifr],
@@ -292,7 +292,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 },
                                 cursorColor: Colors.white,
                                 style: TextStyle(
-                                    fontSize: 22 / globals.txScFact,
+                                    fontSize: 19 / globals.txScFact,
                                     color: Colors.white),
                                 decoration: const InputDecoration(
                                   fillColor: Color(0x70BE6666),
@@ -316,11 +316,11 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 top: -5,
                                 child: Text('возвр',
                                     style: TextStyle(
-                                        fontSize: 19 / globals.txScFact,
+                                        fontSize: 16 / globals.txScFact,
                                         color: Colors.white))),
                             SizedBox(
-                              width: 80,
-                              height: 60,
+                              width: 70,
+                              height: 50,
                               child: TextField(
                                 controller: inputData3,
                                 inputFormatters: [maskCifr],
@@ -344,7 +344,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 },
                                 cursorColor: Colors.white,
                                 style: TextStyle(
-                                    fontSize: 22 / globals.txScFact,
+                                    fontSize: 19 / globals.txScFact,
                                     color: Colors.white),
                                 decoration: const InputDecoration(
                                     fillColor: Color(0x70BE6666),
@@ -367,11 +367,11 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 top: -5,
                                 child: Text('проезд',
                                     style: TextStyle(
-                                        fontSize: 19 / globals.txScFact,
+                                        fontSize: 16 / globals.txScFact,
                                         color: Colors.white))),
                             SizedBox(
-                              width: 80,
-                              height: 60,
+                              width: 70,
+                              height: 50,
                               child: TextField(
                                 controller: inputData4,
                                 focusNode: dataFocus3,
@@ -384,7 +384,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 },
                                 cursorColor: Colors.white,
                                 style: TextStyle(
-                                    fontSize: 22 / globals.txScFact,
+                                    fontSize: 19 / globals.txScFact,
                                     color: Colors.white),
                                 decoration: const InputDecoration(
                                     fillColor: Color(0x70BE6666),
@@ -408,7 +408,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                           hint: Text(
                             'Укажите вид работы',
                             style: TextStyle(
-                              fontSize: 22 / globals.txScFact,
+                              fontSize: 20 / globals.txScFact,
                               color: Colors.white,
                             ),
                             overflow: TextOverflow.ellipsis,
@@ -419,7 +419,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                     child: Text(
                                       item2,
                                       style: TextStyle(
-                                        fontSize: 22 / globals.txScFact,
+                                        fontSize: 20 / globals.txScFact,
                                         color: Colors.white,
                                       ),
                                     ),
@@ -467,7 +467,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                             ),
                           ),
                           menuItemStyleData: const MenuItemStyleData(
-                            height: 60,
+                            height: 50,
                           ),
                         ),
                       ),
@@ -513,8 +513,8 @@ class _RaschetOknoState extends State<RaschetOkno> {
                   style: TextStyle(
                       color: const Color.fromRGBO(255, 255, 255, 1),
                       fontWeight: FontWeight.bold,
-                      letterSpacing: 3,
-                      fontSize: 22 / globals.txScFact)),
+                      //letterSpacing: 3,
+                      fontSize: 20 / globals.txScFact)),
               Container(
                   width: MediaQuery.of(context).size.width - 40,
                   padding: const EdgeInsets.all(10),
@@ -532,7 +532,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 style: TextStyle(
                                     color:
                                         const Color.fromRGBO(255, 255, 255, 1),
-                                    fontSize: 22 / globals.txScFact)),
+                                    fontSize: 20 / globals.txScFact)),
                             Text(' ${globals.sNasosVrema} мин.',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
@@ -540,7 +540,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                     color:
                                         const Color.fromRGBO(255, 255, 255, 1),
                                     //letterSpacing: 1,
-                                    fontSize: 22 / globals.txScFact)),
+                                    fontSize: 20 / globals.txScFact)),
                           ],
                         ),
                         Row(
@@ -550,7 +550,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 style: TextStyle(
                                     color:
                                         const Color.fromRGBO(255, 255, 255, 1),
-                                    fontSize: 22 / globals.txScFact)),
+                                    fontSize: 20 / globals.txScFact)),
                             Text(' ${globals.bNasosVrema} мин.',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
@@ -558,7 +558,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                     color:
                                         const Color.fromRGBO(255, 255, 255, 1),
                                     //letterSpacing: 1,
-                                    fontSize: 22 / globals.txScFact)),
+                                    fontSize: 20 / globals.txScFact)),
                           ],
                         ),
                         Row(
@@ -568,7 +568,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 style: TextStyle(
                                     color:
                                         const Color.fromRGBO(255, 255, 255, 1),
-                                    fontSize: 22 / globals.txScFact)),
+                                    fontSize: 20 / globals.txScFact)),
                             Text(' ${globals.procheVrema} мин.',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
@@ -576,7 +576,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                     fontWeight: FontWeight.bold,
                                     color:
                                         const Color.fromRGBO(255, 255, 255, 1),
-                                    fontSize: 22 / globals.txScFact))
+                                    fontSize: 20 / globals.txScFact))
                           ],
                         ),
                         Row(
@@ -586,7 +586,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                 style: TextStyle(
                                     color:
                                         const Color.fromRGBO(255, 255, 255, 1),
-                                    fontSize: 22 / globals.txScFact)),
+                                    fontSize: 20 / globals.txScFact)),
                             Text(' ${globals.rasXod} л.',
                                 textAlign: TextAlign.right,
                                 style: TextStyle(
@@ -594,7 +594,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                                     color:
                                         const Color.fromRGBO(255, 255, 255, 1),
                                     //letterSpacing: 1,
-                                    fontSize: 22 / globals.txScFact)),
+                                    fontSize: 20 / globals.txScFact)),
                           ],
                         ),
                       ],
