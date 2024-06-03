@@ -43,7 +43,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    globals.txScFact = MediaQuery.textScaleFactorOf(context);
+    globals.txScFact = MediaQuery.textScalerOf(context).scale(1);
     return MaterialApp(
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,

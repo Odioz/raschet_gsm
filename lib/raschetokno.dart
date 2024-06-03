@@ -73,7 +73,10 @@ class _RaschetOknoState extends State<RaschetOkno> {
         actions: <Widget>[
           // меню:
           PopupMenuButton<String>(
-            icon: const Icon(Icons.menu, color: Colors.white,),
+            icon: const Icon(
+              Icons.menu,
+              color: Colors.white,
+            ),
             color: const Color.fromRGBO(124, 20, 21, 1),
             onSelected: (value) {
               vyborClick(value, context);
@@ -200,7 +203,7 @@ class _RaschetOknoState extends State<RaschetOkno> {
                   style: TextStyle(
                       color: const Color.fromRGBO(255, 255, 255, 1),
                       fontWeight: FontWeight.bold,
-                     // letterSpacing: 3,
+                      // letterSpacing: 3,
                       fontSize: 20 / globals.txScFact)),
               Container(
                 width: MediaQuery.of(context).size.width - 40,
@@ -210,194 +213,77 @@ class _RaschetOknoState extends State<RaschetOkno> {
                 child: Column(
                   children: <Widget>[
                     Row(children: <Widget>[
-                      Stack(
-                          //дата работы
-                          alignment: AlignmentDirectional.topCenter,
-                          children: <Widget>[
-                            Positioned(
-                                top: -5,
-                                child: Text('дата',
-                                    style: TextStyle(
-                                        fontSize: 16 / globals.txScFact,
-                                        color: Colors.white))),
-                            SizedBox(
-                                width: 70,
-                                height: 50,
-                                child: TextButton(
-                                  style: ButtonStyle(
-                                      shape: MaterialStatePropertyAll(
-                                          RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(6),
-                                        side: const BorderSide(
-                                            width: 1, color: Colors.white),
-                                      )),
-                                      backgroundColor:
-                                          MaterialStateProperty.all<Color>(
-                                              const Color(0x70BE6666))),
-                                  onPressed: () async {
-                                    DateTime? newData = await showDatePicker(
-                                        context: context,
-                                        locale: const Locale('ru'),
-                                        initialDate: DateTime.now(),
-                                        firstDate: DateTime(2000),
-                                        lastDate: DateTime(2033));
-                                    if (newData != null) {
-                                      setState(() {
-                                        tekData =
-                                            DateFormat('dd.MM').format(newData);
-                                      });
-                                    }
-                                  },
-                                  child: Text(tekData,
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 19 / globals.txScFact)),
-                                )),
-                          ]),
-                      const Spacer(),
-                      Stack(
-                          //время выезда
-                          alignment: AlignmentDirectional.topCenter,
-                          children: <Widget>[
-                            Positioned(
-                                top: -5,
-                                child: Text('выезд',
-                                    style: TextStyle(
-                                        fontSize: 16 / globals.txScFact,
-                                        color: Colors.white))),
-                            SizedBox(
-                              width: 70,
-                              height: 50,
-                              child: TextField(
-                                controller: inputData2,
-                                inputFormatters: [maskCifr],
-                                focusNode: dataFocus1,
-                                keyboardType: TextInputType.number,
-                                textInputAction: TextInputAction.next,
-                                onTap: () {
-                                  setState(() {
-                                    inputData2.text = '';
-                                  });
-                                },
-                                //onEditingComplete: () => FocusScope.of(context).nextFocus(),
-                                onSubmitted: (value) {
-                                  if (!checkData(value) | value.isEmpty) {
-                                    dataFocus1.requestFocus();
-                                  } else {
-                                    izmen3 = true;
-                                    inputData3.text = '';
-                                    FocusScope.of(context)
-                                        .requestFocus(dataFocus2);
-                                  }
-                                },
-                                cursorColor: Colors.white,
-                                style: TextStyle(
-                                    fontSize: 19 / globals.txScFact,
-                                    color: Colors.white),
-                                decoration: const InputDecoration(
-                                  fillColor: Color(0x70BE6666),
-                                  filled: true,
-                                  enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                          width: 1, color: Colors.white)),
-                                  focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                          width: 1, color: Colors.white)),
-                                ),
-                              ),
-                            ),
-                          ]),
-                      const Spacer(),
-                      Stack(
-                          //время возвращения
-                          alignment: AlignmentDirectional.topCenter,
-                          children: <Widget>[
-                            Positioned(
-                                top: -5,
-                                child: Text('возвр',
-                                    style: TextStyle(
-                                        fontSize: 16 / globals.txScFact,
-                                        color: Colors.white))),
-                            SizedBox(
-                              width: 70,
-                              height: 50,
-                              child: TextField(
-                                controller: inputData3,
-                                inputFormatters: [maskCifr],
-                                focusNode: dataFocus2,
-                                keyboardType: TextInputType.number,
-                                textInputAction: TextInputAction.next,
-                                onTap: () {
-                                  setState(() {
-                                    inputData3.text = '';
-                                  });
-                                },
-                                onSubmitted: (value) {
-                                  if (!checkData(value) | value.isEmpty) {
-                                    dataFocus2.requestFocus();
-                                  } else {
-                                    izmen4 = true;
-                                    inputData4.text = '';
-                                    FocusScope.of(context)
-                                        .requestFocus(dataFocus3);
-                                  }
-                                },
-                                cursorColor: Colors.white,
-                                style: TextStyle(
-                                    fontSize: 19 / globals.txScFact,
-                                    color: Colors.white),
-                                decoration: const InputDecoration(
-                                    fillColor: Color(0x70BE6666),
-                                    filled: true,
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            width: 1, color: Colors.white)),
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            width: 1, color: Colors.white))),
-                              ),
-                            ),
-                          ]),
-                      const Spacer(),
-                      Stack(
-                          //проезд
-                          alignment: AlignmentDirectional.topCenter,
-                          children: <Widget>[
-                            Positioned(
-                                top: -5,
-                                child: Text('проезд',
-                                    style: TextStyle(
-                                        fontSize: 16 / globals.txScFact,
-                                        color: Colors.white))),
-                            SizedBox(
-                              width: 70,
-                              height: 50,
-                              child: TextField(
-                                controller: inputData4,
-                                focusNode: dataFocus3,
-                                keyboardType: TextInputType.number,
-                                textInputAction: TextInputAction.done,
-                                onTap: () {
-                                  setState(() {
-                                    inputData4.text = '';
-                                  });
-                                },
-                                cursorColor: Colors.white,
-                                style: TextStyle(
-                                    fontSize: 19 / globals.txScFact,
-                                    color: Colors.white),
-                                decoration: const InputDecoration(
-                                    fillColor: Color(0x70BE6666),
-                                    filled: true,
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            width: 1, color: Colors.white)),
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            width: 1, color: Colors.white))),
-                              ),
-                            ),
-                          ]),
+                      Expanded(
+                          child: TextButton(
+                        style: ButtonStyle(
+                            shape:
+                                MaterialStatePropertyAll(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(6),
+                              side: const BorderSide(
+                                  width: 1, color: Colors.white),
+                            )),
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                const Color(0x70BE6666))),
+                        onPressed: () async {
+                          DateTime? newData = await showDatePicker(
+                              context: context,
+                              locale: const Locale('ru'),
+                              initialDate: DateTime.now(),
+                              firstDate: DateTime(2000),
+                              lastDate: DateTime(2033));
+                          if (newData != null) {
+                            setState(() {
+                              tekData = DateFormat('dd.MM').format(newData);
+                            });
+                          }
+                        },
+                        child: Text(tekData,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 19 / globals.txScFact)),
+                      )),
+                      Expanded(
+                        child: TextField(
+                          controller: inputData2,
+                          inputFormatters: [maskCifr],
+                          focusNode: dataFocus1,
+                          keyboardType: TextInputType.number,
+                          textInputAction: TextInputAction.next,
+                          onTap: () {
+                            setState(() {
+                              inputData2.text = '';
+                            });
+                          },
+                          //onEditingComplete: () => FocusScope.of(context).nextFocus(),
+                          onSubmitted: (value) {
+                            if (!checkData(value) | value.isEmpty) {
+                              dataFocus1.requestFocus();
+                            } else {
+                              izmen3 = true;
+                              inputData3.text = '';
+                              FocusScope.of(context).requestFocus(dataFocus2);
+                            }
+                          },
+                          cursorColor: Colors.white,
+                          style: TextStyle(
+                              fontSize: 19 / globals.txScFact,
+                              color: Colors.white),
+                          decoration: const InputDecoration(
+                            isDense: true,
+                            fillColor: Color(0x70BE6666),
+                            filled: true,
+                            enabledBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(width: 1, color: Colors.white)),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(width: 1, color: Colors.white)),
+                          ),
+                        ),
+                      ),
+                      // Expanded(child:
+                      // )
+                      //     ),
                     ]),
                     const SizedBox(height: 10),
                     SizedBox(
