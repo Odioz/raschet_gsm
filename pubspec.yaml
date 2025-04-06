@@ -1,7 +1,7 @@
 name: raschet_gsm
 description: Project raschet rashoda GSM for PA.
 publish_to: 'none'
-version: 1.1.0
+version: 1.5.0
 
 environment:
   sdk: '>=3.0.5 <4.0.0'
@@ -16,10 +16,10 @@ dependencies:
   path_provider: ^2.0.15
   path: ^1.8.0
   sqflite: ^2.2.8+4  
-  dropdown_button2: ^2.3.7
-  intl: ^0.18.0
+  dropdown_button2: ^2.3.9
+  intl: ^0.19.0
   mask_text_input_formatter: ^2.5.0
-  flutter_launcher_icons: ^0.13.1
+  flutter_launcher_icons: ^0.14.3
   rflutter_alert: ^2.0.7
   url_launcher: ^6.1.14
 
@@ -27,7 +27,9 @@ flutter_launcher_icons:
   android: "launcher_icon"
   ios: false
   image_path: "assets/icon3.png"
-  min_sdk_android: 21
+  min_sdk_android: 24 
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/icon3.png"
 
 dev_dependencies:
   flutter_test:
@@ -40,17 +42,9 @@ flutter:
   assets:
     - assets/baza.db
     - assets/fon.png  
-    - assets/icon.png  
-    - assets/icon1.png
-    - assets/icon2.png
     - assets/OdiozSoft.png
     - assets/whatsapp.png
   fonts:
-    - family: Nunito
+    - family: Evolventa
       fonts:
-        - asset: assets/fonts/Nunito-Bold.ttf
-        - asset: assets/fonts/Nunito-Bold.ttf
-    #- family: RobotoCondensed
-    #  fonts:
-    #    - asset: assets/fonts/RobotoCondensed-Bold.ttf
-    #    - asset: assets/fonts/RobotoCondensed-Regular.ttf
+        - asset: assets/fonts/Evolventa-Regular.ttf
