@@ -1,4 +1,4 @@
-import 'dart:developer';
+// экран начального выбора Отряда
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -18,7 +18,6 @@ class _UstanOknoState extends State<UstanOkno> {
 
   @override
   void initState() {
-    log('initstate');
     Future.delayed(Duration.zero, () async {
       izmen = false;
       globals.podrazdelen = await getPodrazd();
@@ -51,9 +50,9 @@ class _UstanOknoState extends State<UstanOkno> {
                   child: DefaultTextStyle(
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      //fontFamily: 'Evolventa',
+                      fontFamily: 'Evolventa',
                       color: const Color.fromRGBO(255, 255, 255, 1),
-                      fontSize: 24.0 / globals.txScFact,
+                      fontSize: 22.0 / globals.txScFact,
                       fontWeight: FontWeight.bold,
                       backgroundColor: const Color(0xffBE6666),
                     ),
@@ -94,10 +93,10 @@ class _UstanOknoState extends State<UstanOkno> {
                   child: DropdownButtonHideUnderline(
                     child: DropdownButton2<String>(
                       isExpanded: true,
-                      hint:  Text(
+                      hint: Text(
                         'Отряд (ПЧ) ГБУ РС(Я) "ГПС РС(Я)"',
                         style: TextStyle(
-                          fontSize: 18/ globals.txScFact,
+                          fontSize: 18 / globals.txScFact,
                           color: Colors.white,
                         ),
                         overflow: TextOverflow.ellipsis,
@@ -147,14 +146,15 @@ class _UstanOknoState extends State<UstanOkno> {
                         iconDisabledColor: Colors.grey,
                       ),
                       dropdownStyleData: DropdownStyleData(
+                        openInterval: const Interval(0.15, 0.95),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
                           color: const Color(0xff5D2323),
                         ),
                         scrollbarTheme: ScrollbarThemeData(
                           radius: const Radius.circular(40),
-                          thickness: MaterialStateProperty.all(6),
-                          thumbVisibility: MaterialStateProperty.all(true),
+                          thickness: WidgetStateProperty.all(6),
+                          thumbVisibility: WidgetStateProperty.all(true),
                         ),
                       ),
                       menuItemStyleData: const MenuItemStyleData(
@@ -169,22 +169,21 @@ class _UstanOknoState extends State<UstanOkno> {
                   width: MediaQuery.of(context).size.width - 120,
                   child: TextButton(
                       style: ButtonStyle(
-                          elevation: MaterialStateProperty.all(2),
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  side: const BorderSide(
-                                      color: Colors.black,
-                                      width: 1,
-                                      style: BorderStyle.solid),
-                                  borderRadius: BorderRadius.circular(14.0))),
-                          backgroundColor: MaterialStateProperty.all<Color>(
+                          elevation: WidgetStateProperty.all(2),
+                          shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                              side: const BorderSide(
+                                  color: Colors.black,
+                                  width: 1,
+                                  style: BorderStyle.solid),
+                              borderRadius: BorderRadius.circular(14.0))),
+                          backgroundColor: WidgetStateProperty.all<Color>(
                               const Color.fromRGBO(124, 20, 21, 1))),
-                      child: Text('OK',
+                      child: Text('Подтвердить',
                           style: TextStyle(
                             color: izmen
                                 ? const Color.fromRGBO(255, 255, 255, 1)
                                 : Colors.grey,
-                            fontSize: 30  / globals.txScFact,
+                            fontSize: 30 / globals.txScFact,
                             fontWeight: FontWeight.w300,
                           )),
                       onPressed: () {
@@ -193,7 +192,10 @@ class _UstanOknoState extends State<UstanOkno> {
                                 await ustanPrefern(selectedValue2);
                                 Future.delayed(
                                     const Duration(milliseconds: 1000), () {
-                                  raschetOkno(context);
+                                  if (context.mounted) {
+                                    raschetOkno(
+                                        context); //вызов экрана Расчетов
+                                  }
                                 });
                               })
                             : null;
@@ -208,5 +210,3 @@ class _UstanOknoState extends State<UstanOkno> {
     );
   }
 }
-
-

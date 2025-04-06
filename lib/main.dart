@@ -20,7 +20,7 @@ void main() async {
 
   SharedPreferences prefs = await SharedPreferences.getInstance();
   bool pervZap = prefs.getBool("newLaunch") ?? true;
-  
+
   if (!pervZap) {
     globals.nOtryad = prefs.getString("nOtryada") ?? '';
     globals.nazvOtr = prefs.getString("nazvOtr") ?? '';
@@ -28,9 +28,9 @@ void main() async {
     globals.idtekAvto = prefs.getInt("tekAvtoId") ?? 0;
   }
   //!!!
-  if ((DateTime.now().millisecondsSinceEpoch / 1000).round() >= 1708700400) {
-    SystemNavigator.pop();
-  }
+  //if ((DateTime.now().millisecondsSinceEpoch / 1000).round() >= 1708700400) {
+  //  SystemNavigator.pop();
+  //}
 
   runApp(MainApp(pervZap));
   //runApp(const MainApp(true));
@@ -54,7 +54,7 @@ class MainApp extends StatelessWidget {
         Locale('ru'),
       ],
       theme: ThemeData(
-        fontFamily: 'Nunito', //'RobotoCondensed',
+        fontFamily: 'Evolventa',
         appBarTheme: const AppBarTheme(color: Color.fromRGBO(124, 20, 21, 1)),
       ),
       initialRoute: pervzap ? 'Ustanov' : 'Raschet',

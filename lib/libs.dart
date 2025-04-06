@@ -148,7 +148,7 @@ bool checkData(String strk) {
 }
 
 rashetRasxoda(String tdata, String vrVyez, String vrVozr, String proez,
-    BuildContext cont) {
+    int vybRabota, BuildContext cont) {
   //расчет расхода
   int obVrema = 0; //время проезда
   int nAvto;
@@ -234,7 +234,8 @@ rashetRasxoda(String tdata, String vrVyez, String vrVozr, String proez,
   }
   obVrema = vremaVozvr.difference(vremaVyezd).inMinutes;
   rbe = rbe / 100;
-  switch (globals.vidRaboty) {
+  switch (vybRabota) {
+    //globals.vidRaboty
     case 0:
       {
         if (proezd < 10) {
@@ -319,6 +320,10 @@ rashetRasxoda(String tdata, String vrVyez, String vrVozr, String proez,
       }
       break;
   }
+  if (rasxod < 0) {
+      preduprej(cont);
+  }
+  
 }
 
 void preduprej(BuildContext ctx) {
@@ -330,15 +335,15 @@ void preduprej(BuildContext ctx) {
             padding: const EdgeInsets.all(10.0),
             child: Container(
               width: MediaQuery.of(ctx).size.width - 40,
-              height: 80,
+              height: 140,
               alignment: Alignment.center,
-              child: Text(
-                  'Время выезда (или возвращения) указано неверно! Время работы не может быть отрицательным',
+              child: const Text(
+                  'Расход топлива получается отрицательным. Время выезда (или возвращения) указано неверно!\n \n \n ',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: const Color(0xff7C1414),
+                      color:Colors.white, //Color(0xff7C1414),
                       fontWeight: FontWeight.bold,
-                      fontSize: 20 / globals.txScFact)),
+                      fontSize: 20)),
             ),
           ));
 }
@@ -357,7 +362,7 @@ oPrilojenii(context) {
         color: Colors.black,
       ),
     ),
-    titleStyle: const TextStyle(
+    titleStyle: const TextStyle(fontSize: 18,
       fontWeight: FontWeight.w800,
       color: Colors.white,
     ),
@@ -375,47 +380,47 @@ oPrilojenii(context) {
     title: "Расчет расхода топлива пожарных автомобилей",
     buttons: [
       DialogButton(
-        width: 60,
+        width: 100,
         onPressed: () => Navigator.pop(context),
         color: const Color(0xff7C1414),
         radius: BorderRadius.circular(10.0),
-        child: Text(
-          "OK",
+        child: const Text(
+          "Закрыть",
           style:
-              TextStyle(color: Colors.white, fontSize: 20 / globals.txScFact),
+              TextStyle(color: Colors.white, fontSize: 20),
         ),
       ),
     ],
     content: Column(children: <Widget>[
       Center(
-          child: Text('Версия 1.1beta',
+          child: Text('Версия ${globals.versia}',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20 / globals.txScFact,
+              style:  const TextStyle(
+                fontSize: 18,
                 color: Colors.white,
               ))),
-      Text('', style: TextStyle(fontSize: 24 / globals.txScFact)),
-      Center(
+       const Text('', style: TextStyle(fontSize: 24)),
+       const Center(
           child: Text('Разработка:',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 20 / globals.txScFact,
+                fontSize: 18,
                 color: Colors.white,
               ))),
-      Center(child: Image.asset('assets/OdiozSoft.png', width: 90)),
-      Text('', style: TextStyle(fontSize: 24 / globals.txScFact)),
-      Center(
+      Center(child: Image.asset('assets/OdiozSoft.png', width: 60)),
+      const Text('', style: TextStyle(fontSize: 24)),
+      const Center(
           child: Text(
               'Замечания, пожелания, сообщения об ошибках в работе приложения принимаются в группе WhatsApp:',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 20 / globals.txScFact,
+                fontSize: 18,
                 color: Colors.white,
               ))),
       Center(
           child: IconButton(
         icon: Image.asset('assets/whatsapp.png'),
-        iconSize: 40,
+        iconSize: 2,
         color: Colors.black,
         onPressed: () async => await openUrl(
             "https://chat.whatsapp.com/EOIo6hRUige5gMfssxL2z0"), //группа Вацап

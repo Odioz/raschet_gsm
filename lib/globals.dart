@@ -3,8 +3,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 import 'baza.dart';
 
+String versia = '1.6b'; //версия приложения
 SharedPreferences? prefs;
-double txScFact = 1;   //коэффициент увеличения текста
+double txScFact = 1; //коэффициент увеличения текста
 Database? db;
 String path = '';
 List<Podraz> podrazdelen = [];
